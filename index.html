@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh Juice Bar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to the Fresh Juice Bar!</h1>
+        <p>Customize your juice according to your health goals.</p>
+    </header>
+
+    <main>
+        <form id="juice-form">
+            <h2>Tell Us Your Goal</h2>
+            <label for="motive">What's your motive for the juice?</label>
+            <select id="motive" name="motive">
+                <option value="energy">Boost Energy</option>
+                <option value="detox">Detox</option>
+                <option value="immunity">Boost Immunity</option>
+                <option value="relax">Relaxation</option>
+            </select>
+
+            <h2>Any Allergies?</h2>
+            <label for="allergies">Do you have any allergies? (Select all that apply)</label>
+            <div>
+                <input type="checkbox" id="nut-allergy" name="allergy" value="nut-allergy"> Nuts
+                <input type="checkbox" id="gluten-allergy" name="allergy" value="gluten-allergy"> Gluten
+                <input type="checkbox" id="dairy-allergy" name="allergy" value="dairy-allergy"> Dairy
+            </div>
+
+            <h2>Pick Your Ingredients (Choose 3)</h2>
+            <label for="fruit-veggie">Select 3 fruits or vegetables:</label>
+            <select id="fruit-veggie" name="fruit-veggie" multiple size="6">
+                <option value="apple">Apple</option>
+                <option value="carrot">Carrot</option>
+                <option value="spinach">Spinach</option>
+                <option value="banana">Banana</option>
+                <option value="orange">Orange</option>
+                <option value="beetroot">Beetroot</option>
+            </select>
+
+            <h2>Choose Your Juice Size</h2>
+            <label for="size">Size:</label>
+            <select id="size" name="size">
+                <option value="small">Small</option>
+                <option value="large">Large</option>
+            </select>
+
+            <button type="submit">Get Your Juice!</button>
+        </form>
+
+        <div id="summary">
+            <h3>Your Custom Juice</h3>
+            <p id="summary-text"></p>
+        </div>
+    </main>
+
+    <footer>
+        <p>Thank you for choosing Fresh Juice Bar! Enjoy your healthy drink!</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
