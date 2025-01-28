@@ -3,65 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fresh Juice Bar</title>
+    <title>Custom Juice Bar</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <header>
-        <h1>Welcome to the Fresh Juice Bar!</h1>
-        <p>Customize your juice according to your health goals.</p>
-    </header>
-
-    <main>
-        <form id="juice-form">
-            <h2>Tell Us Your Goal</h2>
+    <div id="container">
+        <div id="page1" class="page">
+            <h1>Welcome to the Fresh Juice Bar!</h1>
             <label for="motive">What's your motive for the juice?</label>
-            <select id="motive" name="motive">
-                <option value="energy">Boost Energy</option>
-                <option value="detox">Detox</option>
-                <option value="immunity">Boost Immunity</option>
-                <option value="relax">Relaxation</option>
-            </select>
+            <input type="text" id="motive" placeholder="e.g., Boost Energy">
+            <button onclick="goToPage2()">Next</button>
+        </div>
 
-            <h2>Any Allergies?</h2>
-            <label for="allergies">Do you have any allergies? (Select all that apply)</label>
+        <div id="page2" class="page">
+            <h2>What allergens do you have?</h2>
             <div>
-                <input type="checkbox" id="nut-allergy" name="allergy" value="nut-allergy"> Nuts
-                <input type="checkbox" id="gluten-allergy" name="allergy" value="gluten-allergy"> Gluten
-                <input type="checkbox" id="dairy-allergy" name="allergy" value="dairy-allergy"> Dairy
+                <input type="checkbox" id="nut-allergy"> Nuts
+                <input type="checkbox" id="gluten-allergy"> Gluten
+                <input type="checkbox" id="dairy-allergy"> Dairy
             </div>
+            <button onclick="goToPage3()">Next</button>
+        </div>
 
-            <h2>Pick Your Ingredients (Choose 3)</h2>
-            <label for="fruit-veggie">Select 3 fruits or vegetables:</label>
+        <div id="page3" class="page">
+            <h2>Based on your motive, we suggest these fruits and veggies:</h2>
+            <p id="suggestions"></p>
+            <label for="fruit-veggie">Select 3 fruits/veggies:</label>
             <select id="fruit-veggie" name="fruit-veggie" multiple size="6">
-                <option value="apple">Apple</option>
-                <option value="carrot">Carrot</option>
-                <option value="spinach">Spinach</option>
-                <option value="banana">Banana</option>
-                <option value="orange">Orange</option>
-                <option value="beetroot">Beetroot</option>
+                <!-- Dynamic Options will be added here based on motive and allergens -->
             </select>
+            <button onclick="goToPage4()">Next</button>
+        </div>
 
-            <h2>Choose Your Juice Size</h2>
-            <label for="size">Size:</label>
-            <select id="size" name="size">
+        <div id="page4" class="page">
+            <h2>Choose your extras:</h2>
+            <div>
+                <input type="checkbox" id="pepper"> Pepper
+                <input type="checkbox" id="chia-seeds"> Chia Seeds
+                <input type="checkbox" id="honey"> Honey
+            </div>
+            <button onclick="goToPage5()">Next</button>
+        </div>
+
+        <div id="page5" class="page">
+            <h2>Choose your cup size:</h2>
+            <select id="cup-size">
                 <option value="small">Small</option>
                 <option value="large">Large</option>
             </select>
-
-            <button type="submit">Get Your Juice!</button>
-        </form>
-
-        <div id="summary">
-            <h3>Your Custom Juice</h3>
-            <p id="summary-text"></p>
+            <button onclick="showSummary()">Finish</button>
         </div>
-    </main>
 
-    <footer>
-        <p>Thank you for choosing Fresh Juice Bar! Enjoy your healthy drink!</p>
-    </footer>
+        <div id="summary" class="page">
+            <h2>Your Custom Juice</h2>
+            <div id="juice-image"></div>
+            <p id="summary-text"></p>
+            <p id="nutrition-info"></p>
+            <button onclick="showThankYou()">Thank You!</button>
+        </div>
+
+        <div id="thank-you" class="page">
+            <h2>Thank You!</h2>
+            <p>You're amazing! Enjoy your fresh juice!</p>
+        </div>
+    </div>
 
     <script src="app.js"></script>
 </body>
