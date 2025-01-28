@@ -3,32 +3,58 @@ body {
     background-color: #f4f4f9;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-header {
-    background-color: #44a8f0;
-    color: white;
-    padding: 20px;
+#container {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.page {
+    display: none;
+}
+
+#thank-you {
+    text-align: center;
+    color: green;
+    font-size: 1.5rem;
+}
+
+h1, h2 {
     text-align: center;
 }
 
-h1 {
-    font-size: 2.5rem;
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #44a8f0;
+    color: white;
+    border: none;
+    cursor: pointer;
 }
 
-form {
-    margin: 20px;
+button:hover {
+    background-color: #338bcf;
 }
 
-select, button {
+select, input[type="text"], input[type="checkbox"] {
+    width: 100%;
     padding: 10px;
     margin: 10px 0;
-    font-size: 1rem;
 }
 
-footer {
+#juice-image {
     text-align: center;
-    padding: 10px;
-    background-color: #44a8f0;
-    color: white;
+    margin: 20px 0;
+    animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
